@@ -6,6 +6,27 @@ env:
   FORCE_COLOR: 1
 
 jobs:
+  pylint:
+    name: Pylint
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+  
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+  
+      - name: Install Pylint
+        run: pip install pylint
+  
+      - name: Run Pylint
+        run: |
+          find . -type f -name "*.py" \
+          | grep -v -E -f .gitignore \
+          | xargs pylint
+      
   lighthouse:
     name: Lighthouse
     runs-on: ubuntu-22.04
