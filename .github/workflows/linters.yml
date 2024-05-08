@@ -28,7 +28,8 @@ jobs:
           node-version: "18.x"
       - name: Setup Webhint
         run: |
-          npm install hint --save-dev
+          npm install --save-dev hint
+          [ -f .hintrc ]
       - name: Webhint Report
         run: npx hint .
   stylelint:
@@ -41,7 +42,8 @@ jobs:
           node-version: "18.x"
       - name: Setup Stylelint
         run: |
-          npm install --save-dev stylelint stylelint-config-standard-scss
+          npm install --save-dev stylelint stylelint-scss stylelint-config-standard stylelint-config-standard-scss
+          [ -f .stylelintrc.json ]
       - name: Stylelint Report
         run: npx stylelint "**/*.{css,scss}"
   eslint:
@@ -55,6 +57,7 @@ jobs:
       - name: Setup ESLint
         run: |
           npm install --save-dev eslint eslint-config-airbnb-base eslint-plugin-import babel-eslint
+          [ -f .eslintrc.json ]
       - name: ESLint Report
         run: npx eslint .
   nodechecker:
