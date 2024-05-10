@@ -3,12 +3,16 @@ h1 {
   padding-top: 45px;
 }
 
+h2 {
+  text-align: center;
+}
+
 p {
   text-align: justify;
 }
 
 form {
-  background-color: rgba(255, 255, 255, 0.418);
+  background-color: rgb(255 255 255 / 41.8%);
 }
 
 form:first-child {
@@ -23,7 +27,7 @@ form:last-child {
   margin-top: 25px;
   margin-bottom: 25px;
   padding: 35px;
-  background-color: rgb(113, 175, 255);
+  background-color: rgb(113 175 255);
 }
 
 .connect {

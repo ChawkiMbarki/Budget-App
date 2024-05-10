@@ -37,14 +37,14 @@
         clarity with The Budget App.
       </p>
     </section>
-    <h2 class="display-3 mb-5" style="text-align: center;">Join us NOW!</h2>
+    <h2 class="display-3 mb-5">Join us NOW!</h2>
     <section class="errors">
       {% with errors = get_flashed_messages(category_filter=["error"]) %}
       {% if errors %}
       <ul class="text-center alert alert-danger mt-5">
         {% for error in errors %}
         {% set modified_error = error|replace("-", "</b>-") %}
-        <li style="list-style: none;"><b>{{ modified_error|safe }}</b></li>
+        <li><b>{{ modified_error|safe }}</b></li>
         {% endfor %}
       </ul>
       {% endif %}
