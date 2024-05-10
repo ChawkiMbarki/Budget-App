@@ -30,7 +30,7 @@
 
 # 📖 Budget App <a name="about-project"></a>
 
-The Budget App is a Flask application designed for managing budgets. Users can register, log in, add transactions associated with categories, and track their spending.
+The Budget App is a Flask application designed for managing budgets. Users can register, log in, add spendings associated with categories, and track them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,7 +66,7 @@ The Budget App is a Flask application designed for managing budgets. Users can r
 
 - **User Authentication:** Users can register and log in securely.
 - **Category Management:** Users can add, view, and manage categories.
-- **Transaction Tracking:** Users can add transactions associated with categories.
+- **Transaction Tracking:** Users can add spendings associated with categories.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,9 +159,8 @@ To run linting tests with Stylint, Eslint, and Webhint, execute the following co
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement Desktop Design**
+- [ ] **Implement Mobile Design**
 - [ ] **UX Improvements: Animations, Transitions**
-- [ ] **Left Side Menu for Better Navigation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -179,7 +178,7 @@ If you like this project, give it a start
 
 ## 🙏 Acknowledgements <a name="acknowledgements"></a>
 
-The original design idea is inspired from one of Microverse's capstone projects
+The design idea is inspired from my imagination 😺
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
