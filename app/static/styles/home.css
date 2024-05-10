@@ -1,0 +1,35 @@
+
+h1 {
+  padding-top: 45px;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+form {
+  background-color: rgb(255 255 255 / 41.8%);
+}
+
+form:first-child {
+  border-radius: 15px 0 0 15px;
+}
+
+form:last-child {
+  border-radius: 0 15px 15px 0;
+}
+
+.intro {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 35px;
+  background-color: rgb(113 175 255);
+}
+
+.connect {
+  margin-bottom: 25px;
+}

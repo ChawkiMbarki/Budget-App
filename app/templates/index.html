@@ -1,11 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename = '/styles/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = '/styles/general.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = '/styles/home.css') }}">
 </head>
+
 <body>
-  <center><h1>Home</h1></center>
+  <header>
+    <nav>
+      <div class="container">
+        <img src="{{ url_for('static', filename = '/images/logo.png') }}" class="logo">
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>CashFlow Companion</h1>
+    <section class="intro text-dark">
+      <p>
+        Welcome to The Budget App, a Flask-based web application meticulously crafted for efficient budget management.
+        Designed with simplicity and functionality in mind, this app empowers users to take control of their finances
+        effortlessly. With features such as user registration, secure login, and intuitive spending categorization,
+        tracking your expenses has never been more straightforward. Say goodbye to financial ambiguity and hello to
+        clarity with The Budget App.
+      </p>
+    </section>
+    <h2 class="display-3 mb-5">Join us NOW!</h2>
+    <section class="errors">
+      {% with errors = get_flashed_messages(category_filter=["error"]) %}
+      {% if errors %}
+      <ul class="text-center alert alert-danger mt-5">
+        {% for error in errors %}
+        {% set modified_error = error|replace("-", "</b>-") %}
+        <li><b>{{ modified_error|safe }}</b></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+    </section>
+    <section class="connect container">
+      <div class="row">
+        <form action="/user/create" method="POST" class="col-md-6 pt-4 border border-dark">
+          <h1 class="text-center pb-2">Register</h1>
+          <div class="row">
+            <label class="col-sm-4 offset-sm-2 p-1" for="first_name">First Name:</label>
+            <input class="col-sm-5 mb-2" type="text" name="first_name" id="first_name">
+          </div>
+          <div class="row">
+            <label class="col-sm-4 offset-sm-2 p-1" for="last_name">Last Name:</label>
+            <input class="col-sm-5 mb-2" type="text" name="last_name" id="last_name">
+          </div>
+          <div class="row">
+            <label class="col-sm-4 offset-sm-2 p-1" for="email">Email:</label>
+            <input class="col-sm-5 mb-2" type="text" name="email" id="email">
+          </div>
+          <div class="row">
+            <label class="col-sm-4 offset-sm-2 p-1" for="password">Password:</label>
+            <input class="col-sm-5 mb-2" type="password" name="password" id="password">
+          </div>
+          <div class="row">
+            <label class="col-sm-4 offset-sm-2 p-1" for="confirm_password">Confirm Password:</label>
+            <input class="col-sm-5" type="password" name="confirm_password" id="confirm_password">
+          </div>
+          <div class="row">
+            <input class="col-sm-6 offset-sm-3 mt-5 mb-5 btn btn-success" type="submit" value="Add User">
+          </div>
+        </form>
+        <form action="/user/login" method="POST" class="col-md-6 pt-4 border border-dark">
+          <h1 class="text-center pb-2">Login</h1>
+          <div class="inputs">
+            <div class="row">
+              <label class="col-sm-3 offset-sm-3 p-1" for="login_email">Email:</label>
+              <input class="col-sm-5 m-2" type="text" name="login_email" id="login_email">
+            </div>
+            <div class="row">
+              <label class="col-sm-3 offset-sm-3 p-1" for="login_password">Password:</label>
+              <input class="col-sm-5 m-2" type="password" name="login_password" id="login_password">
+            </div>
+          </div>
+          <div class="row">
+            <input class="col-sm-6 offset-sm-3 mt-5 mb-5 btn btn-primary" type="submit" value="Login">
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      <!-- will be added in the near future -->
+    </div>
+  </footer>
+
 </body>
+
 </html>
